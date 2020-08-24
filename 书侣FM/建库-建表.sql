@@ -1,4 +1,5 @@
 create database tingshu charset utf8mb4;
+
 use tingshu;
 
 create table users (
