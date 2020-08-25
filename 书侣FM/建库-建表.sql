@@ -1,6 +1,6 @@
-create database tingshu charset utf8mb4;
+create database shulv charset utf8mb4;
 
-use tingshu;
+use shulv;
 
 create table users (
   uid int primary key auto_increment comment '用户id',
@@ -24,6 +24,6 @@ create table audios (
   aid int primary key auto_increment comment '音频id',
   sid int not null unique comment '属于哪个章节的id',
   uuid char(36) not null comment 'uuid',
-  content_type varchar(20) not null comment '音频类型 audio/wmv audio/mp3',
+  type varchar(20) not null comment '音频类型 audio/wmv audio/mp3',
   content longblob default null comment '音频内容'
 );
