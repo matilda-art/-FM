@@ -52,9 +52,17 @@
     <h2>章节列表</h2>
     <ol>
         <% for (Section section : book.sections) { %>
+        <% if (section.uuid != null) { %>
         <li>
             <%= section.name %>
+            <a>播放</a>
         </li>
+        <% } else if (user != null && book.user.equals(user)) { %>
+        <li>
+            <%= section.name %>
+            <a href="record.jsp?sid=<%= section.sid %>">录制声音</a>
+        </li>
+        <% } %>
         <% } %>
     </ol>
 </body>
