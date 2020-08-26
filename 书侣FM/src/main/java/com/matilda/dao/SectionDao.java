@@ -32,6 +32,7 @@ public class SectionDao {
     }
 
     public List<Section> selectByBid(int bid) throws SQLException {
+		//必须用左联查询
         String sql = "select sections.sid,uuid,name " +
                 "from sections left join audios on sections.sid = audios.sid " +
                 "where bid = ? order by sections.sid";
