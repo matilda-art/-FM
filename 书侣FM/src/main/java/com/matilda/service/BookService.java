@@ -31,4 +31,18 @@ public class BookService {
     public Book post(String title, User user) throws SQLException {
         return bookDao.insert(user,title);
     }
+
+    public Book get(int bid) throws SQLException{
+        Book book = bookDao.selectByBid(bid);
+        if (book == null){
+            return null;
+        }
+        book.sections = sectionDao.selectByBid(bid);
+
+        return book;
+    }
+
+    public void addSection(int bid, String name) throws SQLException {
+        sectionDao.insert(bid, name);
+    }
 }

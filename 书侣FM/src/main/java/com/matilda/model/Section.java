@@ -10,14 +10,12 @@ import java.util.Objects;
  **/
 
 public class Section {
-    public int sid;
     public String name;
 
     public Section(){
     }
 
-    public Section(int sid,String name){
-        this.sid = sid;
+    public Section(String name){
         this.name = name;
     }
 
@@ -28,16 +26,4 @@ public class Section {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Section section = (Section) o;
-        return Objects.equals(name, section.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
 }

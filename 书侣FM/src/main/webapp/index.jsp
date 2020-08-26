@@ -40,7 +40,7 @@
         <ol>
             <% for (Book book : books) { %>
             <li>
-                <a href="/book.html?bid=<%= book.bid %>"><%= book.title %></a>
+                <a href="/book.jsp?bid=<%= book.bid %>"><%= book.title %></a>
                 <span>上传者：<%= book.user.username %></span>
             </li>
             <% } %>
