@@ -1,7 +1,11 @@
 <%@ page import="com.matilda.model.Section" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String sid = request.getParameter("sid");
+%>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>书侣FM | 录制声音</title>
     <link rel="stylesheet" href="/css/record.css">
 </head>
@@ -18,6 +22,10 @@
     <div>
         <pre id="log"></pre>
     </div>
+
+    <script charset="utf-8">
+        let sid = <%= request.getParameter("sid") %>;
+    </script>
 
     <script charset="utf-8" src="/js/record.js"></script>
 </body>
