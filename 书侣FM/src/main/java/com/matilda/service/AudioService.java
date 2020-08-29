@@ -22,13 +22,14 @@ public class AudioService {
     }
 
     public String save(int sid,Part audio) throws IOException, SQLException {
-        String uuid = UUID.randomUUID().toString();
+        String uuid = UUID.randomUUID().toString();//直接生成uuid
 
         audioDao.insert(sid,uuid,audio.getContentType(),audio.getInputStream());
 
         return uuid;
     }
 
+    //从数据库中获取audio信息
     public Audio get(String uuid) throws SQLException {
         return audioDao.select(uuid);
     }
